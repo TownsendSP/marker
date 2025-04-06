@@ -22,7 +22,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.config.parser import ConfigParser
 from marker.output import text_from_rendered
 from marker.schema import BlockTypes
@@ -71,7 +71,7 @@ def parse_args():
 
 @st.cache_resource()
 def load_models():
-    return create_model_dict()
+    return SuryaModels.create_model_dict()
 
 
 def convert_pdf(fname: str, config_parser: ConfigParser) -> (str, Dict[str, Any], dict):

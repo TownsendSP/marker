@@ -31,6 +31,7 @@ class LayoutBuilder(BaseBuilder):
         "Disable tqdm progress bars.",
     ] = False
 
+
     def __init__(self, layout_model: LayoutPredictor, config=None):
         self.layout_model = layout_model
 

@@ -17,7 +17,7 @@ import gc
 from marker.config.parser import ConfigParser
 from marker.config.printer import CustomClickPrinter
 from marker.logger import configure_logging
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.output import output_exists, save_output
 from marker.settings import settings
 
@@ -26,7 +26,7 @@ configure_logging()
 
 def worker_init(model_dict):
     if model_dict is None:
-        model_dict = create_model_dict()
+        model_dict = SuryaModels.create_model_dict()
 
     global model_refs
     model_refs = model_dict
@@ -119,7 +119,7 @@ def convert_cli(in_folder: str, **kwargs):
     if settings.TORCH_DEVICE == "mps" or settings.TORCH_DEVICE_MODEL == "mps":
         model_dict = None
     else:
-        model_dict = create_model_dict()
+        model_dict = SuryaModels.create_model_dict()
         for k, v in model_dict.items():
             v.model.share_memory()
 

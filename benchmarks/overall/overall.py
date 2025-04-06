@@ -14,7 +14,7 @@ from benchmarks.overall.display.dataset import build_dataset
 from benchmarks.overall.registry import SCORE_REGISTRY, METHOD_REGISTRY
 from benchmarks.overall.schema import FullResult
 from marker.logger import configure_logging
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.settings import settings
 from benchmarks.overall.display.table import print_scores
 
@@ -133,7 +133,7 @@ def main(
         benchmark_dataset = benchmark_dataset.filter(lambda x: x["language"] in languages)
 
     artifacts = {
-        "model_dict": create_model_dict(),
+        "model_dict": SuryaModels.create_model_dict(),
         "use_llm": use_llm,
         "mathpix_ds": None,
         "llamaparse_ds": None,

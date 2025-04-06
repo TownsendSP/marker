@@ -103,6 +103,7 @@ class LineBuilder(BaseBuilder):
         "Disable tqdm progress bars.",
     ] = False
 
+
     def __init__(self, detection_model: DetectionPredictor, inline_detection_model: InlineDetectionPredictor, ocr_error_model: OCRErrorPredictor, config=None):
         super().__init__(config)
 

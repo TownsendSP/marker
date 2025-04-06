@@ -16,7 +16,7 @@ import io
 
 from fastapi import FastAPI, Form, File, UploadFile
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.settings import settings
 
 app_data = {}
@@ -28,7 +28,7 @@ os.makedirs(UPLOAD_DIRECTORY, exist_ok=True)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app_data["models"] = create_model_dict()
+    app_data["models"] = SuryaModels.create_model_dict()
 
     yield
 

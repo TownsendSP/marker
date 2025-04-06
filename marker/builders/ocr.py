@@ -33,6 +33,7 @@ class OcrBuilder(BaseBuilder):
         "Disable tqdm progress bars.",
     ] = False
 
+
     def __init__(self, recognition_model: RecognitionPredictor, config=None):
         super().__init__(config)
 

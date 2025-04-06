@@ -61,6 +61,7 @@ class TableProcessor(BaseProcessor):
         "Whether to disable the tqdm progress bar.",
     ] = False
 
+
     def __init__(
         self,
         detection_model: DetectionPredictor,

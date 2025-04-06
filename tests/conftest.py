@@ -1,31 +1,28 @@
-from marker.providers.pdf import PdfProvider
 import tempfile
 from typing import Dict, Type
 
-from PIL import Image, ImageDraw
-
 import datasets
 import pytest
+from PIL import Image, ImageDraw
 
 from marker.builders.document import DocumentBuilder
 from marker.builders.layout import LayoutBuilder
 from marker.builders.line import LineBuilder
 from marker.builders.ocr import OcrBuilder
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.providers.registry import provider_from_filepath
+from marker.renderers.json import JSONRenderer
+from marker.renderers.markdown import MarkdownRenderer
 from marker.schema import BlockTypes
 from marker.schema.blocks import Block
-from marker.renderers.markdown import MarkdownRenderer
-from marker.renderers.json import JSONRenderer
 from marker.schema.registry import register_block_class
-from marker.services.gemini import GoogleGeminiService
 from marker.util import classes_to_strings, strings_to_classes
 
 
 @pytest.fixture(scope="session")
 def model_dict():
-    model_dict = create_model_dict()
+    model_dict = SuryaModels.create_model_dict()
     yield model_dict
     del model_dict
 

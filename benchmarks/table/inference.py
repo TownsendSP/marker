@@ -10,9 +10,7 @@ import tempfile
 from benchmarks.table.gemini import gemini_table_rec
 from marker.config.parser import ConfigParser
 from marker.converters.table import TableConverter
-from marker.models import create_model_dict
-from marker.processors.llm.llm_table import LLMTableProcessor
-from marker.processors.table import TableProcessor
+from marker.models import SuryaModels
 from marker.renderers.json import JSONBlockOutput
 from marker.schema.polygon import PolygonBox
 from marker.util import matrix_intersection_area
@@ -43,7 +41,7 @@ def fix_table_html(table_html: str) -> str:
 
 
 def inference_tables(dataset, use_llm: bool, table_rec_batch_size: int | None, max_rows: int, use_gemini: bool):
-    models = create_model_dict()
+    models = SuryaModels.create_model_dict()
     config_parser = ConfigParser({'output_format': 'json', "use_llm": use_llm, "table_rec_batch_size": table_rec_batch_size, "disable_tqdm": True})
     total_unaligned = 0
     results = []

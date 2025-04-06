@@ -10,7 +10,7 @@ import click
 from marker.config.parser import ConfigParser
 from marker.config.printer import CustomClickPrinter
 from marker.logger import configure_logging
-from marker.models import create_model_dict
+from marker.models import SuryaModels
 from marker.output import save_output
 
 configure_logging()
@@ -20,7 +20,7 @@ configure_logging()
 @click.argument("fpath", type=str)
 @ConfigParser.common_options
 def convert_single_cli(fpath: str, **kwargs):
-    models = create_model_dict()
+    models = SuryaModels.create_model_dict()
     start = time.time()
     config_parser = ConfigParser(kwargs)
 
