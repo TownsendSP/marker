@@ -10,7 +10,7 @@ from marker.builders.layout import LayoutBuilder
 from marker.builders.line import LineBuilder
 from marker.builders.ocr import OcrBuilder
 from marker.converters.pdf import PdfConverter
-from marker.models import SuryaModels
+from marker.models import create_model_dict
 from marker.providers.registry import provider_from_filepath
 from marker.renderers.json import JSONRenderer
 from marker.renderers.markdown import MarkdownRenderer
@@ -22,7 +22,7 @@ from marker.util import classes_to_strings, strings_to_classes
 
 @pytest.fixture(scope="session")
 def model_dict():
-    model_dict = SuryaModels.create_model_dict()
+    model_dict = create_model_dict()
     yield model_dict
     del model_dict
 

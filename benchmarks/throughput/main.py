@@ -6,7 +6,7 @@ import pypdfium2 as pdfium
 from tqdm import tqdm
 
 from marker.converters.pdf import PdfConverter
-from marker.models import SuryaModels
+from marker.models import create_model_dict
 
 
 @click.command(help="Benchmark PDF to MD conversion throughput.")
@@ -16,7 +16,7 @@ def main(pdf_path):
     pdf = pdfium.PdfDocument(pdf_path)
     page_count = len(pdf)
     pdf.close()
-    model_dict = SuryaModels.create_model_dict()
+    model_dict = create_model_dict()
     torch.cuda.reset_peak_memory_stats()
 
     times = []

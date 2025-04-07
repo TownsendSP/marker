@@ -6,7 +6,7 @@ from typing import Annotated, Dict, Set, Type, get_args, get_origin
 
 from marker.builders import BaseBuilder
 from marker.converters import BaseConverter
-from marker.models import SuryaModels
+from marker.models import create_model_dict
 from marker.processors import BaseProcessor
 from marker.providers import BaseProvider
 from marker.renderers import BaseRenderer
@@ -14,7 +14,7 @@ from marker.services import BaseService
 
 
 class ConfigCrawler:
-    def __init__(self, base_classes=(BaseBuilder, BaseProcessor, BaseConverter, BaseProvider, BaseRenderer, BaseService, SuryaModels)):
+    def __init__(self, base_classes=(BaseBuilder, BaseProcessor, BaseConverter, BaseProvider, BaseRenderer, BaseService)):
         self.base_classes = base_classes
         self.class_config_map = {}
 
