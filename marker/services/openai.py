@@ -17,7 +17,7 @@ from marker.services import BaseService
 class OpenAIService(BaseService):
     openai_base_url: Annotated[
         str,
-        "The base url to use for OpenAI-like models.  No trailing slash."
+        "The base url to use for OpenAI-like suryamodels.  No trailing slash."
     ] = "https://api.openai.com/v1"
     openai_model: Annotated[
         str,

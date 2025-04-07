@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     # LLM
     GOOGLE_API_KEY: Optional[str] = ""
 
-    # General models
+    # General suryamodels
     TORCH_DEVICE: Optional[str] = None  # Note: MPS device does not work for text detection, and will default to CPU
 
     @computed_field

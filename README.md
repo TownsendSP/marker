@@ -141,7 +141,7 @@ See the `PdfConverter` class at `marker/converters/pdf.py` function for addition
 
 ```python
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.suryamodels import create_model_dict
 from marker.output import text_from_rendered
 
 converter = PdfConverter(
@@ -159,7 +159,7 @@ You can pass configuration using the `ConfigParser`.  To see all available optio
 
 ```python
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.suryamodels import create_model_dict
 from marker.config.parser import ConfigParser
 
 config = {
@@ -186,7 +186,7 @@ Here's an example of extracting all forms from a document:
 
 ```python
 from marker.converters.pdf import PdfConverter
-from marker.models import create_model_dict
+from marker.suryamodels import create_model_dict
 from marker.schema import BlockTypes
 
 converter = PdfConverter(
@@ -208,7 +208,7 @@ The `TableConverter` will only convert and extract tables:
 
 ```python
 from marker.converters.table import TableConverter
-from marker.models import create_model_dict
+from marker.suryamodels import create_model_dict
 from marker.output import text_from_rendered
 
 converter = TableConverter(

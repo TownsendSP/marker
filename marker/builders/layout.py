@@ -30,6 +30,34 @@ class LayoutBuilder(BaseBuilder):
         bool,
         "Disable tqdm progress bars.",
     ] = False
+    LayoutPredictor_device: Annotated[
+        str,
+        "Sets the LayoutPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    TexifyPredictor_device: Annotated[
+        str,
+        "Sets the TexifyPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    RecognitionPredictor_device: Annotated[
+        str,
+        "Sets the RecognitionPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    TableRecPredictor_device: Annotated[
+        str,
+        "Sets the TableRecPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    DetectionPredictor_device: Annotated[
+        str,
+        "Sets the DetectionPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    InlineDetectionPredictor_device: Annotated[
+        str,
+        "Sets the InlineDetectionPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
+    OCRErrorPredictor_device: Annotated[
+        str,
+        "Sets the OCRErrorPredictor torch device without affecting the other torch devices. Can be cuda or cpu.",
+    ] = settings.TORCH_DEVICE_MODEL
 
 
     def __init__(self, layout_model: LayoutPredictor, config=None):
